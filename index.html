@@ -1,0 +1,280 @@
+<!doctype html>
+<!--
+  Personal CV trial adapted from tw93/Kami's Chinese resume template.
+  Kami code and templates: MIT License, Copyright (c) 2026 Tw93.
+  TsangerJinKai02 is loaded from Kami's official CDN for personal use only.
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="林程炜的个人简历，采用 Kami 排版系统。">
+  <meta name="author" content="林程炜">
+  <meta name="generator" content="Kami-inspired static CV for Hugo">
+  <title>林程炜 · 个人简历</title>
+  <style>
+    @font-face {
+      font-family: "TsangerJinKai02";
+      src: url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "TsangerJinKai02";
+      src: url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W05.ttf") format("truetype");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @page {
+      size: A4;
+      margin: 11mm 13mm;
+      background: #f5f4ed;
+    }
+
+    :root {
+      --parchment: #f5f4ed;
+      --ivory: #faf9f5;
+      --border: #e8e6dc;
+      --border-soft: #e5e3d8;
+      --near-black: #141413;
+      --dark-warm: #3d3d3a;
+      --olive: #504e49;
+      --stone: #6b6a64;
+      --brand: #1b365d;
+      --brand-tint: #eef2f7;
+      --serif: "TsangerJinKai02", "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", STSong, SimSun, Georgia, serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: #e9e7df; scroll-behavior: smooth; }
+    body {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 28px auto;
+      padding: 11mm 13mm;
+      color: var(--near-black);
+      background: var(--parchment);
+      box-shadow: 0 12px 40px rgba(50, 48, 40, .12);
+      font-family: var(--serif);
+      font-size: 9.2pt;
+      font-weight: 400;
+      line-height: 1.42;
+      letter-spacing: .3pt;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 2px; }
+    a:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
+
+    .header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 8mm;
+      margin-bottom: 4.2mm;
+      padding-bottom: 2.3mm;
+      border-bottom: .6pt solid var(--border);
+    }
+    .identity { display: flex; flex-shrink: 0; align-items: center; gap: 3mm; }
+    .profile-avatar {
+      display: block;
+      width: 18mm;
+      height: 18mm;
+      flex: 0 0 18mm;
+      border-radius: 50%;
+      background: var(--ivory);
+    }
+    .name {
+      display: flex;
+      align-items: baseline;
+      gap: 2.2mm;
+      color: var(--near-black);
+      font-size: 26.5pt;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: .5pt;
+      white-space: nowrap;
+    }
+    .alias { color: var(--stone); font-size: 12.5pt; font-weight: 400; letter-spacing: .2pt; }
+    .tagline { margin-top: 1.5mm; color: var(--olive); font-size: 9.5pt; line-height: 1.3; }
+    .tagline .accent { color: var(--brand); font-weight: 500; }
+    .contact { margin-bottom: -.5mm; color: var(--stone); font-size: 9pt; line-height: 1.5; text-align: right; }
+    .contact .role { color: var(--brand); font-size: 10.5pt; font-weight: 500; }
+    .contact .sep { margin: 0 .4em; color: var(--border); }
+    .contact .loc { color: var(--olive); font-weight: 500; }
+    .contact a { color: var(--dark-warm); }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      column-gap: 6mm;
+      margin-bottom: 3mm;
+    }
+    .metric { display: flex; min-width: 0; padding: 1mm 0 1.2mm; flex-direction: column; align-items: flex-start; gap: .7mm; break-inside: avoid; }
+    .metric-value { color: var(--brand); font-size: 13pt; font-weight: 500; font-variant-numeric: tabular-nums; line-height: 1; white-space: nowrap; }
+    .metric-label { color: var(--olive); font-size: 9pt; line-height: 1.2; white-space: nowrap; }
+
+    section { break-inside: auto; }
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 2.5mm;
+      margin: 5.8mm 0 2mm;
+      padding: 0 0 1mm;
+      border-bottom: .5pt solid var(--border);
+      color: var(--near-black);
+      font-size: 13pt;
+      font-weight: 500;
+    }
+    section:first-of-type .section-title { margin-top: 0; }
+    .section-title .sub { color: var(--stone); font-size: 9pt; font-weight: 400; letter-spacing: .2pt; }
+    .summary { color: var(--near-black); font-size: 9.4pt; line-height: 1.48; }
+    .hl, .em-brand { color: var(--brand); font-weight: 500; }
+
+    .timeline { display: flex; gap: 7mm; margin-bottom: 2.5mm; }
+    .tl-step { flex: 1; padding: .8mm 0; break-inside: avoid; }
+    .tl-top { display: flex; align-items: baseline; gap: 2mm; margin-bottom: .6mm; }
+    .tl-year { color: var(--brand); font-size: 11pt; font-weight: 500; line-height: 1; }
+    .tl-head { color: var(--near-black); font-size: 11pt; font-weight: 500; }
+    .tl-body { color: var(--olive); font-size: 9pt; line-height: 1.45; }
+
+    .project { padding: 2.6mm 0; break-inside: avoid; }
+    .project:first-of-type { padding-top: 1.6mm; }
+    .proj-head { display: block; margin-bottom: .9mm; }
+    .proj-name { color: var(--near-black); font-size: 11pt; font-weight: 500; }
+    .proj-kind { margin-left: 1.5mm; color: var(--olive); font-size: 11pt; }
+    .proj-role {
+      float: right;
+      padding: .4mm 1.6mm;
+      border-radius: 2pt;
+      color: var(--brand);
+      background: var(--brand-tint);
+      font-size: 9pt;
+      font-weight: 500;
+      letter-spacing: .3pt;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .proj-lines { display: table; width: 100%; }
+    .proj-row { display: table-row; }
+    .proj-label { display: table-cell; width: 17mm; padding: .55mm 2.5mm .55mm 0; color: var(--stone); font-size: 8.5pt; vertical-align: top; }
+    .proj-text { display: table-cell; padding: .55mm 0; color: var(--dark-warm); font-size: 9.1pt; line-height: 1.46; vertical-align: top; }
+
+    .page-break { break-before: page; }
+    .page-break > .section-title { margin-top: 0; }
+    .os-intro { margin-bottom: 2.5mm; color: var(--dark-warm); font-size: 9.2pt; }
+    .os-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4mm 7mm; }
+    .os-item { display: grid; grid-template-columns: 28mm minmax(0, 1fr); align-items: baseline; gap: 2mm; padding: 1.1mm 0; border-bottom: .3pt solid var(--border-soft); break-inside: avoid; }
+    .os-name { font-size: 10.2pt; font-weight: 500; }
+    .os-desc { color: var(--olive); font-size: 8.8pt; line-height: 1.35; }
+
+    .skill-row { display: grid; grid-template-columns: 30mm minmax(0, 1fr); gap: 3mm; padding: 1.4mm 0; border-bottom: .3pt solid var(--border-soft); break-inside: avoid; }
+    .skill-label { color: var(--near-black); font-size: 9.5pt; font-weight: 500; }
+    .skill-body { color: var(--olive); font-size: 9.1pt; line-height: 1.4; }
+
+    .edu-row { display: flex; align-items: baseline; justify-content: space-between; gap: 5mm; padding-top: 1.2mm; }
+    .school { color: var(--near-black); font-size: 10.2pt; font-weight: 500; }
+    .major { color: var(--olive); font-size: 9.5pt; }
+    .date { color: var(--stone); font-size: 9pt; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+    @media screen and (max-width: 860px) {
+      html { background: var(--parchment); }
+      body { width: 100%; min-height: 100vh; margin: 0; padding: 28px 24px 56px; box-shadow: none; }
+      .page-break { break-before: auto; }
+    }
+    @media screen and (max-width: 640px) {
+      body { padding: 24px 18px 48px; font-size: 10pt; }
+      .header { display: block; }
+      .identity { align-items: center; }
+      .profile-avatar { width: 16mm; height: 16mm; flex-basis: 16mm; }
+      .name { white-space: normal; }
+      .contact { margin-top: 4mm; text-align: left; }
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2mm; }
+      .timeline { display: grid; gap: 2mm; }
+      .proj-role { float: none; display: inline-block; margin: 1mm 0 0; }
+      .proj-lines, .proj-row, .proj-label, .proj-text { display: block; width: auto; }
+      .proj-label { padding-bottom: 0; color: var(--brand); font-weight: 500; }
+      .os-grid { grid-template-columns: 1fr; }
+      .skill-row { grid-template-columns: 1fr; gap: .5mm; }
+      .edu-row { display: block; }
+      .date { display: block; margin-top: 1mm; }
+      .section-title { align-items: flex-start; }
+    }
+    @media print {
+      html, body { background: var(--parchment); }
+      body { width: auto; min-height: auto; margin: 0; padding: 0; box-shadow: none; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="identity">
+      <img class="profile-avatar" src="images/avatar.svg" alt="首页同款黄色小圆球头像">
+      <div>
+        <div class="name">林程炜</div>
+        <div class="tagline">Agent（GUI Agent）· <span class="accent">CV</span> · 多模态</div>
+      </div>
+    </div>
+    <div class="contact">
+      <span class="role">努力学习 AI Agent</span><br>
+      <a href="mailto:ll-lcw@sjtu.edu.cn">ll-lcw@sjtu.edu.cn</a><span class="sep">·</span>
+      <span class="loc">中国</span>
+    </div>
+  </header>
+
+  <div class="metrics" aria-label="简历概览">
+    <div class="metric"><span class="metric-value">2</span><span class="metric-label">段研究经历</span></div>
+    <div class="metric"><span class="metric-value">3</span><span class="metric-label">个研究领域</span></div>
+    <div class="metric"><span class="metric-value">1 年</span><span class="metric-label">GUI Agent 研究</span></div>
+    <div class="metric"><span class="metric-value">5 年</span><span class="metric-label">学习与研究经历</span></div>
+  </div>
+
+  <main>
+    <section>
+      <h2 class="section-title">个人摘要</h2>
+      <p class="summary">关注 <span class="hl">GUI Agent / CUA</span>（Computer Use Agent）。当前在做 visual coding 的能力评估，以及相关的 Agent 基础设施与算法；此前曾研究联邦学习、异质图神经网络等传统机器学习方向。</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">经历脉络 <span class="sub">2024 — 至今 · 从传统机器学习到 GUI Agent</span></h2>
+      <div class="timeline">
+        <div class="tl-step">
+          <div class="tl-top"><span class="tl-year">2024</span><span class="tl-head">传统机器学习</span></div>
+          <p class="tl-body">2024.5 — 2025.7 · 研究联邦学习、异质图神经网络等方向。</p>
+        </div>
+        <div class="tl-step">
+          <div class="tl-top"><span class="tl-year">2025</span><span class="tl-head">GUI Agent</span></div>
+          <p class="tl-body">2025.9 — 至今 · 转向 Agent 研究，尤其是 GUI Agent 相关工作。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">核心能力</h2>
+      <div class="skill-row"><div class="skill-label">Agent</div><div class="skill-body"><span class="em-brand">GUI Agent / CUA</span>、visual coding 能力评估、Agent 基础设施与算法。</div></div>
+      <div class="skill-row"><div class="skill-label">机器学习</div><div class="skill-body">联邦学习、异质图神经网络。</div></div>
+      <div class="skill-row"><div class="skill-label">多模态 / CV</div><div class="skill-body">多模态理解与视觉相关研究。</div></div>
+    </section>
+
+    <section>
+      <h2 class="section-title">教育经历</h2>
+      <div class="edu-row">
+        <div><span class="school">上海交通大学</span><span class="major"> · 信息工程 · 本科</span></div>
+        <span class="date">2021 — 2025</span>
+      </div>
+      <div class="edu-row">
+        <div><span class="school">上海交通大学</span><span class="major"> · 信息与通信工程 · 硕士</span></div>
+        <span class="date">2025 — 至今</span>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
