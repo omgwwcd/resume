@@ -1,2 +1,3 @@
 # resume
-Personal resume / CV site for GitHub Pages
+
+Personal CV site. Live at https://omgwwcd.github.io/resume/
